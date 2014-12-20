@@ -11,12 +11,16 @@
 ## --------------------------------------------------------------------------------
 makeCacheMatrix <- function(x=matrix()) {
     inv <- NULL
+       setMatrix <- function(y) {
+        x <<- y
+        inv <<- NULL
+    }
     getMatrix <- function() x
     setInvmatrix <- function(Invmatrix) inv <<- Invmatrix
     getInvmatrix <- function() inv
 
     # return a list of functions as an R object
-    list(getMatrix=getMatrix, setInvmatrix=setInvmatrix, getInvmatrix=getInvmatrix)
+    list(setMatix=setMatrix, getMatrix=getMatrix, setInvmatrix=setInvmatrix, getInvmatrix=getInvmatrix)
 }
 
 
